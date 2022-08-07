@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainpane" prefHeight="796.0" prefWidth="1408.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportsteer.DashBoardController">
+   <left>
+      <VBox prefHeight="865.0" prefWidth="190.0" style="-fx-background-color: #2A3041;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="DashboardMenuButton" onAction="#jumpToDashboard" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: transparent; -fx-border-color: D4DBF9; -fx-border-width: 0px 0px 2px 0px;" text="Dashboard" textFill="#a2accb">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin></JFXButton>
+            <JFXButton fx:id="EmployeeMenuButton" onAction="#jumpToEmployees" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: transparent; -fx-border-color: D4DBF9; -fx-border-width: 0 0 2 0;" stylesheets="@buttonstyle.css" text="Employees" textFill="#a2accb">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="PerfomancesMenuButton" onAction="#jumpToPefomances" prefHeight="25.0" prefWidth="192.0" style="-fx-background-color: transparent; -fx-border-color: D4DBF9; -fx-border-width: 0 0 2 0;" text="Perfomances" textFill="#a2accb">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="FinancesMenuButton" onAction="#jumpToFinances" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: transparent; -fx-border-color: D4DBF9; -fx-border-width: 0 0 2 0;" text="Finances" textFill="#a2accb">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="SchedulesMenuButton" onAction="#jumpToSchedules" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: transparent; -fx-border-color: D4DBF9; -fx-border-width: 0 0 2 0;" text="Schedules" textFill="#a2accb">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="AchievmentsMenubutton" onAction="#jumpToAchievements" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: transparent; -fx-border-color: D4DBF9; -fx-border-width: 0 0 2 0;" text="Achievements" textFill="#a2accb">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="Logout" layoutX="10.0" layoutY="270.0" onAction="#logoutMethod" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: transparent; -fx-border-color: D4DBF9; -fx-border-width: 0 0 2 0;" text="Logout" textFill="#a2accb">
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="slidepane" prefHeight="796.0" prefWidth="1190.0" stylesheets="@tablestyle.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="perfomancespane" layoutX="-11.0" layoutY="-2.0" prefHeight="879.0" prefWidth="1330.0" style="-fx-background-color: #0f3460;" stylesheets="@tablestyle.css">
+               <children>
+                  <Circle fx:id="exitbtn1" fill="#ff1f1f" layoutX="1292.0" layoutY="23.0" onMouseClicked="#exitapplication" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fill="#edf501" layoutX="1259.0" layoutY="23.0" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fx:id="minimizebtn1" fill="#21ff50" layoutX="1223.0" layoutY="23.0" onMouseClicked="#minimizeapplicaton" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <TabPane layoutX="-3.0" layoutY="44.0" prefHeight="814.0" prefWidth="1327.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Day 1">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="37.0" layoutY="45.0">
+                                       <content>
+                                          <TableView fx:id="PerfomanceTable" prefHeight="683.0" prefWidth="1242.0">
+                                            <columns>
+                                              <TableColumn fx:id="matchtypecol" prefWidth="89.0" text="MatchType" />
+                                                <TableColumn fx:id="playernamecol1" minWidth="1.000030517578125" prefWidth="122.00003051757812" text="PlayerName" />
+                                                <TableColumn fx:id="playertype" prefWidth="123.99996948242188" text="PlayerType" />
+                                                <TableColumn fx:id="runsscored" prefWidth="105.0" text="RunsScored" />
+                                                <TableColumn fx:id="ballsfaced" prefWidth="120.0" text="BallsFaced" />
+                                                <TableColumn fx:id="fours" prefWidth="123.0" text="Fours" />
+                                                <TableColumn fx:id="sixes" prefWidth="119.0" text="Sixes" />
+                                                <TableColumn fx:id="wicketstaken" prefWidth="148.0" text="WicketsTaken" />
+                                                <TableColumn fx:id="ballsbowled" prefWidth="128.0" text="BallsBowled" />
+                                                <TableColumn fx:id="runsgave" prefWidth="164.0" text="RunsGave" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                      <Tab text="Day 2">
+                           <content>
+                              <AnchorPane>
+                                 <children>
+                                    <ScrollPane layoutX="37.0" layoutY="41.0" prefHeight="723.0" prefWidth="1267.0">
+                                       <content>
+                                          <TableView fx:id="PerfomanceTable2" prefHeight="717.0" prefWidth="1263.0">
+                                             <columns>
+                                                <TableColumn fx:id="matchtypecol2" prefWidth="89.0" text="MatchType" />
+                                                <TableColumn fx:id="playernamecol2" minWidth="1.000030517578125" prefWidth="122.00003051757812" text="PlayerName" />
+                                                <TableColumn fx:id="playertype2" prefWidth="123.99996948242188" text="PlayerType" />
+                                                <TableColumn fx:id="runsscored2" prefWidth="105.0" text="RunsScored" />
+                                                <TableColumn fx:id="ballsfaced2" prefWidth="120.0" text="BallsFaced" />
+                                                <TableColumn fx:id="fours2" prefWidth="123.0" text="Fours" />
+                                                <TableColumn fx:id="sixes2" prefWidth="119.0" text="Sixes" />
+                                                <TableColumn fx:id="wicketstaken2" prefWidth="148.0" text="WicketsTaken" />
+                                                <TableColumn fx:id="ballsbowled2" prefWidth="128.0" text="BallsBowled" />
+                                                <TableColumn fx:id="runsgave2" prefWidth="164.0" text="RunsGave" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Day 3">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="37.0" layoutY="37.0" prefHeight="731.0" prefWidth="1246.0">
+                                       <content>
+                                          <TableView fx:id="PerfomanceTable3" prefHeight="720.0" prefWidth="1240.0">
+                                             <columns>
+                                                <TableColumn fx:id="matchtypecol3" prefWidth="89.0" text="MatchType" />
+                                                <TableColumn fx:id="playernamecol3" minWidth="1.000030517578125" prefWidth="122.00003051757812" text="PlayerName" />
+                                                <TableColumn fx:id="playertype3" prefWidth="123.99996948242188" text="PlayerType" />
+                                                <TableColumn fx:id="runsscored3" prefWidth="105.0" text="RunsScored" />
+                                                <TableColumn fx:id="ballsfaced3" prefWidth="120.0" text="BallsFaced" />
+                                                <TableColumn fx:id="fours3" prefWidth="123.0" text="Fours" />
+                                                <TableColumn fx:id="sixes3" prefWidth="119.0" text="Sixes" />
+                                                <TableColumn fx:id="wicketstaken3" prefWidth="148.0" text="WicketsTaken" />
+                                                <TableColumn fx:id="ballsbowled3" prefWidth="128.0" text="BallsBowled" />
+                                                <TableColumn fx:id="runsgave3" prefWidth="164.0" text="RunsGave" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Day 4">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="42.0" layoutY="49.0" prefHeight="716.0" prefWidth="1246.0">
+                                       <content>
+                                          <TableView fx:id="PerfomanceTable4" prefHeight="712.0" prefWidth="1243.0">
+                                             <columns>
+                                                <TableColumn fx:id="matchtypecol4" prefWidth="89.0" text="MatchType" />
+                                                <TableColumn fx:id="playernamecol4" minWidth="1.000030517578125" prefWidth="122.00003051757812" text="PlayerName" />
+                                                <TableColumn fx:id="playertype4" prefWidth="123.99996948242188" text="PlayerType" />
+                                                <TableColumn fx:id="runsscored4" prefWidth="105.0" text="RunsScored" />
+                                                <TableColumn fx:id="ballsfaced4" prefWidth="120.0" text="BallsFaced" />
+                                                <TableColumn fx:id="fours4" prefWidth="123.0" text="Fours" />
+                                                <TableColumn fx:id="sixes4" prefWidth="119.0" text="Sixes" />
+                                                <TableColumn fx:id="wicketstaken4" prefWidth="148.0" text="WicketsTaken" />
+                                                <TableColumn fx:id="ballsbowled4" prefWidth="128.0" text="BallsBowled" />
+                                                <TableColumn fx:id="runsgave4" prefWidth="164.0" text="RunsGave" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Day 5">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="29.0" layoutY="34.0" prefHeight="731.0" prefWidth="1261.0">
+                                       <content>
+                                          <TableView fx:id="PerfomanceTable5" prefHeight="726.0" prefWidth="1259.0">
+                                             <columns>
+                                                <TableColumn fx:id="matchtypecol5" prefWidth="89.0" text="MatchType" />
+                                                <TableColumn fx:id="playernamecol5" minWidth="1.000030517578125" prefWidth="122.00003051757812" text="PlayerName" />
+                                                <TableColumn fx:id="playertype5" prefWidth="123.99996948242188" text="PlayerType" />
+                                                <TableColumn fx:id="runsscored5" prefWidth="105.0" text="RunsScored" />
+                                                <TableColumn fx:id="ballsfaced5" prefWidth="120.0" text="BallsFaced" />
+                                                <TableColumn fx:id="fours5" prefWidth="123.0" text="Fours" />
+                                                <TableColumn fx:id="sixes5" prefWidth="119.0" text="Sixes" />
+                                                <TableColumn fx:id="wicketstaken5" prefWidth="148.0" text="WicketsTaken" />
+                                                <TableColumn fx:id="ballsbowled5" prefWidth="128.0" text="BallsBowled" />
+                                                <TableColumn fx:id="runsgave5" prefWidth="164.0" text="RunsGave" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Day 6">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="39.0" layoutY="50.0" prefHeight="715.0" prefWidth="1251.0">
+                                       <content>
+                                          <TableView fx:id="PerfomanceTable6" prefHeight="712.0" prefWidth="1247.0">
+                                             <columns>
+                                                <TableColumn fx:id="matchtypecol6" prefWidth="89.0" text="MatchType" />
+                                                <TableColumn fx:id="playernamecol6" minWidth="1.000030517578125" prefWidth="122.00003051757812" text="PlayerName" />
+                                                <TableColumn fx:id="playertype6" prefWidth="123.99996948242188" text="PlayerType" />
+                                                <TableColumn fx:id="runsscored6" prefWidth="105.0" text="RunsScored" />
+                                                <TableColumn fx:id="ballsfaced6" prefWidth="120.0" text="BallsFaced" />
+                                                <TableColumn fx:id="fours6" prefWidth="123.0" text="Fours" />
+                                                <TableColumn fx:id="sixes6" prefWidth="119.0" text="Sixes" />
+                                                <TableColumn fx:id="wicketstaken6" prefWidth="148.0" text="WicketsTaken" />
+                                                <TableColumn fx:id="ballsbowled6" prefWidth="128.0" text="BallsBowled" />
+                                                <TableColumn fx:id="runsgave6" prefWidth="164.0" text="RunsGave" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Day 7">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane layoutX="31.0" layoutY="53.0" prefHeight="704.0" prefWidth="1262.0">
+                                       <content>
+                                          <TableView fx:id="PerfomanceTable7" prefHeight="702.0" prefWidth="1259.0">
+                                             <columns>
+                                                <TableColumn fx:id="matchtypecol7" prefWidth="89.0" text="MatchType" />
+                                                <TableColumn fx:id="playernamecol7" minWidth="1.000030517578125" prefWidth="122.00003051757812" text="PlayerName" />
+                                                <TableColumn fx:id="playertype7" prefWidth="123.99996948242188" text="PlayerType" />
+                                                <TableColumn fx:id="runsscored7" prefWidth="105.0" text="RunsScored" />
+                                                <TableColumn fx:id="ballsfaced7" prefWidth="120.0" text="BallsFaced" />
+                                                <TableColumn fx:id="fours7" prefWidth="123.0" text="Fours" />
+                                                <TableColumn fx:id="sixes7" prefWidth="119.0" text="Sixes" />
+                                                <TableColumn fx:id="wicketstaken7" prefWidth="148.0" text="WicketsTaken" />
+                                                <TableColumn fx:id="ballsbowled7" prefWidth="128.0" text="BallsBowled" />
+                                                <TableColumn fx:id="runsgave7" prefWidth="164.0" text="RunsGave" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Add Perfomance">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <JFXTextField fx:id="EmployeeID" layoutX="138.0" layoutY="87.0" promptText="Enter Employee Id" />
+                                    <JFXTextField fx:id="MatchId" layoutX="389.0" layoutY="87.0" promptText="Enter Match Id" />
+                                    <JFXTextField layoutX="704.0" layoutY="87.0" />
+                                    <JFXComboBox fx:id="MatchTypeCB" layoutX="704.0" layoutY="87.0" prefHeight="25.0" prefWidth="145.0" promptText="Match type" />
+                                    <JFXTextField fx:id="RunsScored" layoutX="138.0" layoutY="189.0" promptText="Runs Score" />
+                                    <JFXTextField fx:id="BallsFaced" layoutX="389.0" layoutY="189.0" promptText="Balls Faced" />
+                                    <JFXTextField layoutX="709.0" layoutY="189.0" />
+                                    <JFXTextField fx:id="BallsBowled" layoutX="138.0" layoutY="302.0" promptText="Balls Bowled" />
+                                    <JFXTextField fx:id="WicketsTaken" layoutX="405.0" layoutY="302.0" promptText="WicketsTaken" />
+                                    <JFXComboBox fx:id="PalyerTypeCB" layoutX="709.0" layoutY="189.0" prefHeight="25.0" prefWidth="138.0" promptText="Player Type" />
+                                    <JFXTextField fx:id="RunsGave" layoutX="724.0" layoutY="302.0" promptText="RunsGave" />
+                                    <JFXTextField fx:id="Fours" layoutX="138.0" layoutY="393.0" promptText="Fours" />
+                                    <JFXTextField fx:id="Sixes" layoutX="405.0" layoutY="393.0" promptText="Sixes" />
+                                    <JFXCheckBox fx:id="pomcheck" checkedColor="#f55d4f" layoutX="733.0" layoutY="397.0" text="Player Of The Match" />
+                                    <JFXButton fx:id="perfomanceaddbutton" buttonType="RAISED" layoutX="423.0" layoutY="573.0" onAction="#addPerfomanceToDatabase" prefHeight="39.0" prefWidth="301.0" ripplerFill="#1998e1" style="-fx-background-color: #1893F8;" text="ADD DATA TO DATABASE" textFill="WHITE">
+                                       <font>
+                                          <Font name="Bell MT" size="20.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="financepane" layoutX="-5.0" style="-fx-background-color: #19ccff;">
+               <children>
+                  <AnchorPane layoutY="54.0" prefHeight="815.0" prefWidth="1315.0">
+                     <children>
+                        <TabPane layoutX="4.0" layoutY="-1.0" prefHeight="782.0" prefWidth="1310.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="expensepagebutton" onSelectionChanged="#jumpToExpense" text="Expense">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="785.0" prefWidth="1280.0">
+                                       <children>
+                                          <ScrollPane layoutX="60.0" layoutY="34.0">
+                                             <content>
+                                                <TableView fx:id="ExpenseTable" prefHeight="702.0" prefWidth="1166.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="ExpenseDateCol" prefWidth="203.0" text="Date" />
+                                                    <TableColumn fx:id="ExpenseDescCol" prefWidth="355.0" text="Description" />
+                                                      <TableColumn fx:id="ExpenseAmountCol" minWidth="0.0" prefWidth="222.0" text="Amount" />
+                                                      <TableColumn fx:id="ExpenseMethodCol" minWidth="0.0" prefWidth="156.0" text="Method" />
+                                                      <TableColumn fx:id="ExpenseStatusCol" prefWidth="173.0" text="Status" />
+                                                  </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="revenuepagebutton" onSelectionChanged="#jumpToRevenue" text="Revenue">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="298.0">
+                                       <children>
+                                        <AnchorPane layoutX="50.0" layoutY="27.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                                          <ScrollPane layoutX="70.0" layoutY="44.0">
+                                             <content>
+                                                <TableView fx:id="RevenueTable" prefHeight="760.0" prefWidth="1195.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="ExpenseDateCol1" prefWidth="203.0" text="Date" />
+                                                      <TableColumn fx:id="ExpenseDescCol1" prefWidth="355.0" text="Description" />
+                                                      <TableColumn fx:id="ExpenseAmountCol1" minWidth="0.0" prefWidth="222.0" text="Amount" />
+                                                      <TableColumn fx:id="ExpenseMethodCol1" minWidth="0.0" prefWidth="156.0" text="Method" />
+                                                      <TableColumn fx:id="ExpenseStatusCol1" prefWidth="173.0" text="Status" />
+                                                   </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="salarypagebutton" onSelectionChanged="#jumpToSalary" text="Salary">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <AnchorPane layoutX="38.0" layoutY="18.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                                          <ScrollPane layoutX="47.0" layoutY="33.0">
+                                             <content>
+                                                <TableView fx:id="SalaryTable" prefHeight="788.0" prefWidth="1239.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="SalaryIdcol" prefWidth="84.0" text="ID" />
+                                                      <TableColumn fx:id="SalaryNameCol" prefWidth="363.0" text="Name" />
+                                                      <TableColumn fx:id="SalaryDesignaitonCol" prefWidth="195.0" text="Designation" />
+                                                      <TableColumn fx:id="SalaryAmountCol" minWidth="0.0" prefWidth="222.0" text="Amount" />
+                                                      <TableColumn fx:id="SlaryBonusCol" minWidth="0.0" prefWidth="184.0" text="Bonus" />
+                                                      <TableColumn fx:id="SalaryStatusCol" prefWidth="190.0" text="Status" />
+                                                   </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab fx:id="adminpanel1" text="Add Finance Data">
+                                 <content>
+                                    <AnchorPane fx:id="EmployeeAdminPanel1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                          <JFXTextField fx:id="FinanceID" labelFloat="true" layoutX="117.0" layoutY="72.0" prefHeight="25.0" prefWidth="257.0" promptText="Enter Finance Id" />
+                                          <JFXTextField fx:id="famount" labelFloat="true" layoutX="114.0" layoutY="154.0" prefHeight="25.0" prefWidth="260.0" promptText="Enter Amount" />
+                                          <JFXTextField fx:id="fdes" labelFloat="true" layoutX="109.0" layoutY="237.0" prefHeight="25.0" prefWidth="265.0" promptText="Enter Finance Explanation" />
+                                          <JFXTextField layoutX="820.0" layoutY="72.0" />
+                                          <JFXTextField layoutX="820.0" layoutY="154.0" />
+                                          <JFXTextField layoutX="820.0" layoutY="237.0" />
+                                          <JFXComboBox fx:id="ftype" layoutX="821.0" layoutY="72.0" prefHeight="25.0" prefWidth="223.0" promptText="Finance Type" />
+                                          <JFXComboBox fx:id="fdaycb" layoutX="820.0" layoutY="154.0" prefHeight="25.0" prefWidth="59.0" promptText="Date" />
+                                          <JFXComboBox fx:id="fmonthcb" layoutX="879.0" layoutY="154.0" prefHeight="25.0" prefWidth="70.0" promptText="Month" />
+                                          <JFXComboBox fx:id="fyearcb" layoutX="949.0" layoutY="154.0" prefHeight="25.0" prefWidth="96.0" promptText="Year" />
+                                          <JFXComboBox fx:id="fmethod" layoutX="822.0" layoutY="237.0" prefHeight="25.0" prefWidth="225.0" promptText="Payment Method" />
+                                          <JFXCheckBox fx:id="paidchk" layoutX="508.0" layoutY="333.0" prefHeight="18.0" prefWidth="111.0" text="Paid" />
+                                          <JFXButton fx:id="addfinbtn" buttonType="RAISED" layoutX="439.0" layoutY="414.0" onAction="#addfinancedata" prefHeight="39.0" prefWidth="250.0" ripplerFill="#1998e1" style="-fx-background-color: #1893F8;" text="ADD TO DATABASE" textFill="WHITE">
+                                             <font>
+                                                <Font name="Bell MT Bold" size="20.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+                  <Circle fx:id="exitbtn3" fill="#ff1f1f" layoutX="1287.0" layoutY="19.0" onMouseClicked="#exitapplication" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fill="#edf501" layoutX="1259.0" layoutY="19.0" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fx:id="minimizebtn3" fill="#21ff50" layoutX="1235.0" layoutY="19.0" onMouseClicked="#minimizeapplicaton" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="schedulespane" layoutX="-10.0" layoutY="-2.0" prefHeight="879.0" prefWidth="1333.0" style="-fx-background-color: #52575d;" stylesheets="@tablestyle.css">
+               <children>
+                  <Circle fx:id="minimizebtn2" fill="#21ff50" layoutX="1238.0" layoutY="23.0" onMouseClicked="#minimizeapplicaton" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fill="#edf501" layoutX="1267.0" layoutY="23.0" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fx:id="exitbtn2" fill="#ff1f1f" layoutX="1295.0" layoutY="23.0" onMouseClicked="#exitapplication" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <ScrollPane layoutX="47.0" layoutY="60.0">
+                     <content>
+                        <TabPane>
+                           <tabs>
+                              <Tab text="Schedules">
+                                 <content>
+                                    <TableView fx:id="scheduletable" prefHeight="773.0" prefWidth="1233.0">
+                                      <columns>
+                                        <TableColumn fx:id="schidcol" prefWidth="75.0" text="SL" />
+                                        <TableColumn fx:id="schtypecol" prefWidth="174.0" text="TYPE" />
+                                          <TableColumn fx:id="schdescol" prefWidth="632.0" text="Description" />
+                                          <TableColumn fx:id="schdaycol" minWidth="0.0" prefWidth="351.0" text="Time" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="adminpanel11" text="Add Schedule">
+                                 <content>
+                                    <AnchorPane fx:id="EmployeeAdminPanel11" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                                       <children>
+                                          <JFXTextField fx:id="schid" labelFloat="true" layoutX="117.0" layoutY="72.0" prefHeight="25.0" prefWidth="257.0" promptText="Enter Schedule Id" />
+                                          <JFXTextField fx:id="schdes" labelFloat="true" layoutX="114.0" layoutY="154.0" prefHeight="25.0" prefWidth="260.0" promptText="Enter Schedule Description" />
+                                          <JFXTextField layoutX="820.0" layoutY="72.0" />
+                                          <JFXTextField layoutX="820.0" layoutY="154.0" />
+                                          <JFXComboBox fx:id="schtypecb" layoutX="821.0" layoutY="72.0" prefHeight="25.0" prefWidth="223.0" promptText="Schedule Type" />
+                                          <JFXComboBox fx:id="schday" layoutX="820.0" layoutY="154.0" prefHeight="25.0" prefWidth="59.0" promptText="Date" />
+                                          <JFXComboBox fx:id="schmon" layoutX="879.0" layoutY="154.0" prefHeight="25.0" prefWidth="70.0" promptText="Month" />
+                                          <JFXComboBox fx:id="schyear" layoutX="949.0" layoutY="154.0" prefHeight="25.0" prefWidth="96.0" promptText="Year" />
+                                          <JFXButton fx:id="addschedulebtn" buttonType="RAISED" layoutX="457.0" layoutY="275.0" onAction="#addscheduledata" prefHeight="39.0" prefWidth="250.0" ripplerFill="#1998e1" style="-fx-background-color: #1893F8;" text="ADD TO DATABASE" textFill="WHITE">
+                                             <font>
+                                                <Font name="Bell MT Bold" size="20.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="acheivementspane" layoutX="-12.0" layoutY="-5.0" prefHeight="883.0" prefWidth="1332.0" style="-fx-background-color: #56556e;" stylesheets="@tablestyle.css">
+               <children>
+                  <Circle fx:id="exitbtn31" fill="#ff1f1f" layoutX="1286.0" layoutY="27.0" onMouseClicked="#exitapplication" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fill="#edf501" layoutX="1258.0" layoutY="27.0" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fx:id="minimizebtn31" fill="#21ff50" layoutX="1234.0" layoutY="27.0" onMouseClicked="#minimizeapplicaton" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <TabPane layoutX="8.0" layoutY="57.0" prefHeight="825.0" prefWidth="1310.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="MatchPerfomance">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="795.0" prefWidth="852.0">
+                                 <children>
+                                    <ScrollPane layoutX="44.0" layoutY="56.0">
+                                       <content>
+                                          <TableView fx:id="allpertable" prefHeight="716.0" prefWidth="1224.0">
+                                            <columns>
+                                              <TableColumn fx:id="cl1" prefWidth="147.00003051757812" text="WeekNo" />
+                                              <TableColumn fx:id="cl2" prefWidth="260.0" text="MatchesPlayed" />
+                                                <TableColumn fx:id="cl3" prefWidth="215.0" text="MatchesWon" />
+                                                <TableColumn fx:id="cl4" prefWidth="234.0" text="MatchesLost" />
+                                                <TableColumn fx:id="cl5" minWidth="0.0" prefWidth="170.0" text="AverageRun" />
+                                                <TableColumn fx:id="cl6" prefWidth="197.0" text="AverageWicket" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Team Records">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <TableView fx:id="battingtable" layoutX="133.0" layoutY="120.0" prefHeight="242.0" prefWidth="748.0">
+                                      <columns>
+                                        <TableColumn fx:id="namrcol" prefWidth="131.0" text="Name" />
+                                        <TableColumn fx:id="matchcol" prefWidth="135.0" text="MatchPlayed" />
+                                          <TableColumn fx:id="runcol" prefWidth="136.0" text="RunsScored" />
+                                          <TableColumn fx:id="runavcol" prefWidth="75.0" text="Average" />
+                                          <TableColumn fx:id="srcol" prefWidth="135.0" text="StrikeRate" />
+                                          <TableColumn fx:id="hscol" prefWidth="124.0" text="HisghestScore" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="133.0" layoutY="41.0" text="Batting Records" textFill="#fc8484">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="29.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="156.0" layoutY="398.0" text="Bowling Records" textFill="#fc8484">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="29.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="battingtable1" layoutX="133.0" layoutY="452.0" prefHeight="237.0" prefWidth="741.0">
+                                       <columns>
+                                          <TableColumn fx:id="namrcol1" prefWidth="131.0" text="Name" />
+                                          <TableColumn fx:id="matchcol1" prefWidth="135.0" text="MatchPlayed" />
+                                          <TableColumn fx:id="wktcol" prefWidth="114.0" text="WicketsTaken" />
+                                          <TableColumn fx:id="wkavcol" prefWidth="97.0" text="Average" />
+                                          <TableColumn fx:id="srcol1" prefWidth="135.0" text="StrikeRate" />
+                                          <TableColumn fx:id="hwcol" prefWidth="124.0" text="HisghestWicket" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Add Perfomance">
+                           <content>
+                              <AnchorPane fx:id="addteamperfomancepane" minHeight="0.0" minWidth="0.0" prefHeight="762.0" prefWidth="1310.0" style="-fx-background-color: #fff;">
+                                 <children>
+                                    <JFXTextField fx:id="MatchId1" layoutX="131.0" layoutY="87.0" promptText="Enter Match Id" />
+                                    <JFXTextField layoutX="697.0" layoutY="93.0" prefHeight="25.0" prefWidth="197.0" />
+                                    <JFXComboBox fx:id="MatchTypeCB1" layoutX="389.0" layoutY="93.0" prefHeight="25.0" prefWidth="145.0" promptText="Match type" />
+                                    <JFXTextField fx:id="RunsScored1" layoutX="138.0" layoutY="189.0" promptText="Runs Scored" />
+                                    <JFXTextField fx:id="WicketsLost" layoutX="394.0" layoutY="302.0" promptText=" WicketsLost" />
+                                    <JFXTextField fx:id="WicketsTaken1" layoutX="138.0" layoutY="302.0" promptText="WicketsTaken" />
+                                    <JFXTextField fx:id="RunsGiven" layoutX="394.0" layoutY="189.0" promptText="RunsGiven" />
+                                    <JFXTextField fx:id="Fours1" layoutX="697.0" layoutY="189.0" promptText="Fours" />
+                                    <JFXTextField fx:id="Sixes1" layoutX="692.0" layoutY="302.0" promptText="Sixes" />
+                                    <JFXCheckBox fx:id="verdict" checkedColor="#f55d4f" layoutX="447.0" layoutY="404.0" text="Match Won?" />
+                                    <JFXButton fx:id="teamperfomancebtn" buttonType="RAISED" layoutX="354.0" layoutY="488.0" onAction="#addTeamDatatoDB" prefHeight="39.0" prefWidth="301.0" ripplerFill="#1998e1" style="-fx-background-color: #1893F8;" text="ADD DATA TO DATABASE" textFill="WHITE">
+                                       <font>
+                                          <Font name="Bell MT" size="20.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXComboBox fx:id="matchdaycb" layoutX="696.0" layoutY="93.0" promptText="Day" />
+                                    <JFXComboBox fx:id="matchmnthcb" layoutX="764.0" layoutY="93.0" promptText="Month" />
+                                    <JFXComboBox fx:id="matchyearcb" layoutX="842.0" layoutY="93.0" promptText="Year" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="employeespane" layoutX="-12.0" prefHeight="843.0" prefWidth="1332.0" style="-fx-background-color: #fbe9e7;" stylesheets="@tablestyle.css">
+               <children>
+                  <TabPane layoutX="-1.0" layoutY="40.0" prefHeight="838.0" prefWidth="1341.0">
+                     <tabs>
+                        <Tab fx:id="PlayerTabPane" onSelectionChanged="#showPlayerEmpoyee" text="Players">
+                           <content>
+                              <AnchorPane>
+                                 <children>
+                                    <ScrollPane>
+                                       <content>
+                                          <TableView fx:id="PlayerTable" prefHeight="749.0" prefWidth="1334.0">
+                                            <columns>
+                                              <TableColumn fx:id="PlayerNamecol" prefWidth="177.0" text="Name" />
+                                              <TableColumn fx:id="PlayerAgeCol" prefWidth="149.0" text="Age" />
+                                                <TableColumn fx:id="PlayerSalaryCol" prefWidth="188.0" text="Salary" />
+                                                <TableColumn fx:id="PlayerAddressCol" minWidth="0.0" prefWidth="249.0" text="Address" />
+                                                <TableColumn fx:id="Playerphonecol" prefWidth="194.0" text="Phone" />
+                                                <TableColumn fx:id="Playerbgcol" prefWidth="189.0" text="BloodGroup" />
+                                                <TableColumn fx:id="PlayerMailCol" prefWidth="172.0" text="E-mail" />
+                                            </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                    <JFXTextField fx:id="ed1" layoutY="770.0" style="-fx-background-color: #fff;" />
+                                    <JFXTextField fx:id="ed2" layoutX="157.0" layoutY="770.0" style="-fx-background-color: #fff;" />
+                                    <JFXTextField fx:id="ed3" layoutX="317.0" layoutY="770.0" style="-fx-background-color: #fff;" />
+                                    <JFXTextField fx:id="ed4" layoutX="476.0" layoutY="770.0" style="-fx-background-color: #fff;" />
+                                    <JFXTextField fx:id="ed5" layoutX="633.0" layoutY="770.0" style="-fx-background-color: #fff;" />
+                                    <JFXTextField fx:id="ed6" layoutX="786.0" layoutY="770.0" style="-fx-background-color: #fff;" />
+                                    <JFXTextField fx:id="ed7" layoutX="934.0" layoutY="770.0" style="-fx-background-color: #fff;" />
+                                    <JFXButton fx:id="edit" buttonType="RAISED" layoutX="1112.0" layoutY="770.0" onAction="#handleupdate" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #40c4ff;" text="Edit" textFill="WHITE">
+                                       <font>
+                                          <Font name="Bauhaus 93" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="delete" buttonType="RAISED" layoutX="1210.0" layoutY="770.0" onAction="#deletedata" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #ff1744;" text="Delete" textFill="WHITE">
+                                       <font>
+                                          <Font name="Bauhaus 93" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="MnagerTabPane" onSelectionChanged="#showMangerEmployee" text="Managers">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane prefHeight="807.0" prefWidth="1323.0">
+                                       <content>
+                                          <TableView fx:id="ManagerTable" prefHeight="804.0" prefWidth="1321.0">
+                                             <columns>
+                                                <TableColumn fx:id="ManagerNameCol" prefWidth="186.99996948242188" text="Name" />
+                                                <TableColumn fx:id="ManagerAgeCol" prefWidth="138.99996948242188" text="Age" />
+                                                <TableColumn fx:id="ManagerSalaryCol" prefWidth="216.0" text="Salary" />
+                                                <TableColumn fx:id="ManagerMailCol" prefWidth="247.0" text="Mail" />
+                                                <TableColumn fx:id="ManagerAddressCol" minWidth="0.0" prefWidth="246.0" text="Address" />
+                                                <TableColumn fx:id="ManagerPhoneCol" prefWidth="184.0" text="Phone" />
+                                                <TableColumn fx:id="ManagerBGCOL" prefWidth="101.0" text="BloodGroup" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="CoachTabpane" onSelectionChanged="#showCoachEmployee" text="Coaches">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane prefHeight="814.0" prefWidth="1322.0">
+                                       <content>
+                                          <TableView fx:id="CoachTable" prefHeight="807.0" prefWidth="1318.0">
+                                             <columns>
+                                                <TableColumn fx:id="CoachNamecol" prefWidth="195.0" text="Name" />
+                                                <TableColumn fx:id="CoachAgeCol" prefWidth="129.0" text="Age" />
+                                                <TableColumn fx:id="CoachSalaryCol" prefWidth="225.0" text="Salary" />
+                                                <TableColumn fx:id="CoachMailCol" prefWidth="235.0" text="Mail" />
+                                                <TableColumn fx:id="CoachAddressCol" minWidth="0.0" prefWidth="228.0" text="Address" />
+                                                <TableColumn fx:id="CoachPhoneCol" prefWidth="177.0" text="Phone" />
+                                                <TableColumn fx:id="CoachBGCol" prefWidth="128.0" text="BloodGroup" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="StuffTabePane" onSelectionChanged="#showStuffEmployee" text="Stuffs">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane prefHeight="814.0" prefWidth="1322.0">
+                                       <content>
+                                          <TableView fx:id="StuffTable" prefHeight="807.0" prefWidth="1318.0">
+                                             <columns>
+                                                <TableColumn fx:id="StuffNamecol" prefWidth="201.0" text="Name" />
+                                                <TableColumn fx:id="StuffDesignationCol" prefWidth="203.0" text="Designation" />
+                                                <TableColumn fx:id="StuffAgeCol" prefWidth="165.0" text="Age" />
+                                                <TableColumn fx:id="StuffSalaryCol" prefWidth="176.0" text="Salary" />
+                                                <TableColumn fx:id="StuffMailCol" prefWidth="198.0" text="Mail" />
+                                                <TableColumn fx:id="StuffAddressCol" minWidth="0.0" prefWidth="219.0" text="Address" />
+                                                <TableColumn fx:id="StuffPhoneCol" prefWidth="228.0" text="Phone" />
+                                             </columns>
+                                          </TableView>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="adminpanel" text="AdminMode">
+                          <content>
+                            <AnchorPane fx:id="EmployeeAdminPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                                 <children>
+                                    <JFXTextField fx:id="employeeNameTextfield" labelFloat="true" layoutX="117.0" layoutY="72.0" prefHeight="25.0" prefWidth="257.0" promptText="Enter Name" />
+                                    <JFXTextField fx:id="EmployeeMailTextfield" labelFloat="true" layoutX="114.0" layoutY="154.0" prefHeight="25.0" prefWidth="260.0" promptText="Enter Email Address" />
+                                    <JFXTextField fx:id="EmployeePhoneTextField" labelFloat="true" layoutX="109.0" layoutY="237.0" prefHeight="25.0" prefWidth="265.0" promptText="Enter Phone Number" />
+                                    <JFXTextField layoutX="820.0" layoutY="72.0" />
+                                    <JFXTextField layoutX="820.0" layoutY="154.0" />
+                                    <JFXTextField layoutX="820.0" layoutY="237.0" />
+                                    <JFXComboBox fx:id="EmployeeTypeCB" layoutX="821.0" layoutY="72.0" prefHeight="25.0" prefWidth="223.0" promptText="Category" />
+                                    <JFXComboBox fx:id="DobDateCB" layoutX="820.0" layoutY="154.0" prefHeight="25.0" prefWidth="59.0" promptText="Date" />
+                                    <JFXComboBox fx:id="DobMonthCB" layoutX="879.0" layoutY="154.0" prefHeight="25.0" prefWidth="70.0" promptText="Month" />
+                                    <JFXComboBox fx:id="DobYearCB" layoutX="949.0" layoutY="154.0" prefHeight="25.0" prefWidth="96.0" promptText="Year" />
+                                    <JFXComboBox fx:id="EmployeeBloddGroupCB" layoutX="822.0" layoutY="237.0" prefHeight="25.0" prefWidth="225.0" promptText="Blood Group" />
+                                    <JFXTextField fx:id="EmployeeSalaryTextfield" labelFloat="true" layoutX="822.0" layoutY="319.0" prefHeight="25.0" prefWidth="225.0" promptText="Enter Salary" />
+                                    <JFXTextField fx:id="EmployeeAdressTextfield" labelFloat="true" layoutX="109.0" layoutY="319.0" prefHeight="25.0" prefWidth="266.0" promptText="Enter Address" />
+                                    <JFXCheckBox fx:id="makesuperuserbutton" layoutX="527.0" layoutY="441.0" prefHeight="18.0" prefWidth="111.0" text="Make Admin" />
+                                    <JFXButton fx:id="employeeaddbutton" buttonType="RAISED" layoutX="457.0" layoutY="563.0" onAction="#addEmployeeToDatabase" prefHeight="39.0" prefWidth="250.0" ripplerFill="#1998e1" style="-fx-background-color: #1893F8;" text="ADD TO DATABASE" textFill="WHITE">
+                                       <font>
+                                          <Font name="Bell MT Bold" size="20.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+                  <Circle fx:id="exitbtn" fill="#ff1f1f" layoutX="1297.0" layoutY="14.0" onMouseClicked="#exitapplication" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fill="#edf501" layoutX="1269.0" layoutY="14.0" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <Circle fx:id="minimizebtn" fill="#21ff50" layoutX="1245.0" layoutY="14.0" onMouseClicked="#minimizeapplicaton" radius="9.0" stroke="#978f8f" strokeType="INSIDE" />
+                  <JFXTextField fx:id="searchbar" layoutX="6.0" layoutY="10.0" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: #fff;" />
+                  <FontAwesomeIconView glyphName="EYE" layoutX="248.0" layoutY="27.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="dashboardspane" layoutX="-8.0" layoutY="1.0" prefHeight="878.0" prefWidth="1329.0" style="-fx-background-color: #F2F6FB;">
+               <children>
+                  <Pane layoutY="-23.0" prefHeight="229.0" prefWidth="1330.0" style="-fx-border-width: 5px; -fx-background-radius: 30; -fx-border-radius: 30; -fx-background-color: F25D79;">
+                     <children>
+                        <Text fill="#eeeeee" layoutX="70.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                           <font>
+                              <Font name="Bell MT Bold" size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="65.0" layoutY="137.0" prefHeight="171.0" prefWidth="331.0" style="-fx-background-radius: 20; -fx-background-color: #fff;">
+                     <children>
+                        <Circle fill="#e3e9ef" layoutX="165.0" layoutY="49.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <Text fill="#6b6464" layoutX="77.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="250 Players" wrappingWidth="207.9169921875">
+                           <font>
+                              <Font name="hooge 05_55" size="31.0" />
+                           </font>
+                        </Text>
+                        <FontAwesomeIconView fill="#726565" glyphName="USER" layoutX="160.0" layoutY="53.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="854.0" layoutY="128.0" prefHeight="171.0" prefWidth="331.0" style="-fx-background-radius: 20; -fx-background-color: #fff;">
+                     <children>
+                        <Circle fill="#e5fae5" layoutX="166.0" layoutY="49.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <FontAwesomeIconView fill="#7c6969" glyphName="MAGNET" layoutX="160.0" layoutY="53.0" />
+                        <Text fill="#6b6464" layoutX="66.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 Trophies" wrappingWidth="207.9169921875">
+                           <font>
+                              <Font name="hooge 05_55" size="31.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="452.0" layoutY="128.0" prefHeight="171.0" prefWidth="331.0" style="-fx-background-radius: 20; -fx-background-color: #fff;">
+                     <children>
+                        <Circle fill="#fcecec" layoutX="166.0" layoutY="49.0" radius="35.0" stroke="#ae9c9c" strokeType="INSIDE" strokeWidth="0.0" />
+                        <FontAwesomeIconView fill="#6f6565" glyphName="TASKS" layoutX="160.0" layoutY="53.0" />
+                        <Text fill="#6b6464" layoutX="62.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100 Matches" wrappingWidth="207.9169921875">
+                           <font>
+                              <Font name="hooge 05_55" size="31.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="65.0" layoutY="374.0" prefHeight="422.0" prefWidth="719.0" style="-fx-background-color: #fff; -fx-background-radius: 20;">
+                     <children>
+                        <AreaChart fx:id="areachart" layoutX="15.0" layoutY="12.0" prefHeight="383.0" prefWidth="704.0" stylesheets="@dashboard.css">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </AreaChart>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="854.0" layoutY="361.0" prefHeight="431.0" prefWidth="331.0" style="-fx-background-color: #ffff; -fx-background-radius: 20;">
+                     <children>
+                        <BarChart fx:id="barchart" prefHeight="440.0" prefWidth="331.0" stylesheets="@dashboard.css">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

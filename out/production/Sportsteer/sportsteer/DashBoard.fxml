@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXMasonryPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportsteer.DashBoardController">
+   <children>
+      <VBox layoutX="-6.0" layoutY="-2.0" prefHeight="800.0" prefWidth="190.0" style="-fx-background-color: F7F9FB;" />
+      <ScrollPane layoutX="185.0" layoutY="113.0" prefHeight="690.0" prefWidth="1218.0" style="-fx-background-color: #F2F6FB;">
+         <content>
+            <Pane prefHeight="693.0" prefWidth="1214.0" style="-fx-background-color: F2F6FB;">
+               <children>
+                  <JFXMasonryPane layoutX="463.0" layoutY="-29.0" prefHeight="126.0" prefWidth="357.0" style="-fx-background-color: #fff; -fx-border-radius: 20px;">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXMasonryPane>
+                  <Pane prefHeight="114.0" prefWidth="1218.0" style="-fx-border-radius: 20px; -fx-background-color: F25D79;" />
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+      <JFXMasonryPane layoutX="222.0" layoutY="76.0" prefHeight="126.0" prefWidth="357.0" style="-fx-background-color: #fff; -fx-border-radius: 20px;">
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXMasonryPane>
+   </children>
+</AnchorPane>

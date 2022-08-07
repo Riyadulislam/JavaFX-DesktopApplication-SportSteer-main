@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Sportsteer.jnlp">
+  <information>
+    <title>Sportsteer</title>
+    <vendor>Dexter Sam</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Sportsteer.jar" size="471282" download="eager" />
+    <jar href="lib\AnimateFX-1.2.1.jar" size="94267" download="eager" />
+    <jar href="lib\KGradientPanel.jar" size="3699" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\jfoenix-8.0.10.jar" size="2710207" download="eager" />
+    <jar href="lib\sqljdbc41.jar" size="900895" download="eager" />
+    <jar href="lib\sqljdbc42.jar" size="898868" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Sportsteer" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="sportsteer.Sportsteer"  name="Sportsteer" />
+  <update check="always"/>
+</jnlp>

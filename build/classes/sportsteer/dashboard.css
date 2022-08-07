@@ -1,0 +1,43 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.default-color0.chart-area-symbol { -fx-background-color: #FF93AB, #FCDBE1; }
+.default-color1.chart-area-symbol { -fx-background-color: #4F6272, #E7D2D9; }
+.default-color2.chart-area-symbol { -fx-background-color: #dda0dd, #d8bfd855; }
+ 
+.default-color0.chart-series-area-line { -fx-stroke: #FF93AB; }
+.default-color1.chart-series-area-line { -fx-stroke: #E7D2D9; }
+.default-color2.chart-series-area-line { -fx-stroke: #dda0dd; }
+ 
+.default-color0.chart-series-area-fill { -fx-fill: #F9BEC8; }
+.default-color1.chart-series-area-fill { -fx-fill: #D5BAC3; }
+.default-color2.chart-series-area-fill { -fx-fill: #d8bfd855; }
+
+.chart-plot-background {
+    -fx-background-color: #ffffff;
+}
+
+.axis{
+    -fx-border-color: transparent;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: transparent;
+}
+
+.dialog_button{
+  -fx-background-color: #ff5c8d;
+  -fx-border-color: #374046;
+  -fx-text-fill: white;
+
+}
+.dialog_button:hover{
+  -fx-background-color:  #E81E63;
+  -fx-border-color: white; 
+  -fx-text-fill: white;
+}	

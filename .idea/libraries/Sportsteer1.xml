@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Sportsteer1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Sportsteer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
